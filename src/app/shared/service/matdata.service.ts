@@ -12,7 +12,7 @@ import { Matdata } from './matdata.model';
 @Injectable()
 export class MatdataService {
 
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = ' https://pubmatic-demo-api.herokuapp.com/';
   constructor(private http: Http) { }
 
   getServiceData():Observable<Matdata>{
