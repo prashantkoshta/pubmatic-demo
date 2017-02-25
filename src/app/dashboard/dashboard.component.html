@@ -1,0 +1,55 @@
+<div class="box">
+  <md-card>
+    <md-card-title>Dashboard</md-card-title>   
+    <md-card-content>
+
+          <div>
+            <md-input-container class="example-full-width" >
+                <input #md mdInput placeholder="Enter Tag" (change)="onTagEnter(md.value)">
+            </md-input-container>
+
+
+            
+            <span>Sort By:</span>
+            <md-button-toggle-group #group="mdButtonToggleGroup" (change)="onSortingChange(group.value)">
+              <md-button-toggle value="updated_a-z">
+                Updated a-z
+              </md-button-toggle>
+              <md-button-toggle value="updated_z-a">
+                Updated z-a
+              </md-button-toggle>
+              <md-button-toggle value="lastupdated_a-z">
+                Last Updated a-z
+              </md-button-toggle>
+              <md-button-toggle value="lastupdated_z-a">
+               Last Updated z-a
+              </md-button-toggle>
+            </md-button-toggle-group>
+          </div>
+
+         
+        
+
+          <div>
+          <table>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Updated</th>
+                <th>Last Udpated</th>
+                <th>Tags</th>
+              </tr>
+              <tr *ngFor="let item of arViewList; let i=index">
+                   <td>{{item.id}}</td>
+                   <td>{{item.name}}</td>
+                   <td>{{item.price}}</td>
+                    <td>{{item.datetimes.updated}}</td>
+                    <td>{{item.datetimes.lastexecuted}}</td>
+                    <td>{{item.tags}}</td>
+              </tr>
+          </table>
+        </div>
+    </md-card-content>
+  </md-card>
+</div>
