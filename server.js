@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var ejs = require('ejs');
+//var ejs = require('ejs');
 var express = require('express');
 var compression = require('compression')
 var oneYear = 315576000000;
@@ -8,8 +8,8 @@ var app = express();
 app.use(compression());
 app.enable('etag');
 app.set('etag', 'strong');
-//app.set('port', (process.env.PORT || 5000));
-app.set('port', 5000);
+app.set('port', (process.env.PORT || 5000));
+//app.set('port', 5000);
 app.use(express.static(__dirname + '/dist', { cacheControl:true, maxAge: oneYear }));
 
 /*
