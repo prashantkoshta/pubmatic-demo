@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
  startPolling():void{
     var source = Rx.Observable
-    .interval(2000)
+    .interval(60000)
     .repeat();
     var subscription = source.subscribe(
       (x) =>  this.getServiceData(),
