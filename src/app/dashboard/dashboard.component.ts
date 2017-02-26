@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.startPolling();
     this.observeChange();
+    this.getServiceData();
   }
 
  startPolling():void{
